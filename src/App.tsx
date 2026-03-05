@@ -24,6 +24,7 @@ import {
   Globe
 } from 'lucide-react';
 import { resumeData } from './data';
+import AIBlob from './components/AIBlob';
 
 const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => (
   <div className="mb-12">
@@ -93,8 +94,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-white selection:text-black">
+      <AIBlob />
       {/* Navigation Rail */}
-      <nav className="fixed left-0 top-0 h-full w-20 hidden md:flex flex-col items-center justify-between py-12 border-r border-white/5 z-50 bg-[#050505]">
+      <nav className="fixed left-0 top-0 h-full w-20 hidden md:flex flex-col items-center justify-between py-12 border-r border-white/5 z-50 bg-[#050505]/80 backdrop-blur-md">
         <div className="text-xl font-bold tracking-tighter">
           {resumeData.name.split(' ').map(n => n[0]).join('')}
         </div>
@@ -124,7 +126,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="md:ml-20">
+      <main className="md:ml-20 relative z-10">
         {/* Hero Section */}
         <section id="home" className="min-h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
@@ -172,7 +174,7 @@ export default function App() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-32 px-8 md:px-24 bg-[#0a0a0a]">
+        <section id="experience" className="py-32 px-8 md:px-24 bg-[#0a0a0a]/50 backdrop-blur-sm">
           <SectionHeader title="Experience" subtitle="Career Path" />
           
           <div className="max-w-5xl space-y-12">
@@ -211,7 +213,7 @@ export default function App() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-32 px-8 md:px-24">
+        <section id="projects" className="py-32 px-8 md:px-24 bg-transparent">
           <SectionHeader title="Selected Projects" subtitle="Portfolio" />
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl">
@@ -270,7 +272,7 @@ export default function App() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="py-32 px-8 md:px-24 bg-[#0a0a0a]">
+        <section id="skills" className="py-32 px-8 md:px-24 bg-[#0a0a0a]/50 backdrop-blur-sm">
           <SectionHeader title="Expertise" subtitle="Technical Skills" />
           
           <div className="grid md:grid-cols-3 gap-12 max-w-6xl">
@@ -281,7 +283,7 @@ export default function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-32 px-8 md:px-24 relative overflow-hidden">
+        <section id="contact" className="py-32 px-8 md:px-24 relative overflow-hidden bg-transparent">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2 pointer-events-none" />
           
           <div className="max-w-6xl grid md:grid-cols-2 gap-24">
@@ -392,7 +394,7 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-24 px-8 md:px-24 border-t border-white/5 text-center">
+        <footer className="py-24 px-8 md:px-24 border-t border-white/5 text-center bg-[#050505]/30 backdrop-blur-sm">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8">Let's build something <span className="text-white/20 italic">extraordinary</span>.</h2>
           <p className="text-white/40 mb-12 max-w-xl mx-auto">
             I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
